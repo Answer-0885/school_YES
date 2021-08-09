@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    min-height: 100vh;
+    margin-top: 40px;
+}
+.container{
+    max-width: 100%;
+    min-width: 320px;
+}
+.wrap{
+    max-width:1170px;  /* Добавил +15px к 1170px чтобы получить слева отступ  */
+    margin: 0 auto;   
+    padding:0 15px;
+} 
+main{
+    flex: 1 1 auto;
+}
+

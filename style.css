@@ -1,0 +1,1011 @@
+@import url('core.css');
+@import url('fonts/gilroy.css');
+/*Обнулен ие*/
+*{padding:0;margin:0;border:0;}
+*,*:before,*:after{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;}
+:focus,:active{outline:none;}
+a:focus,a:active{outline:none;}
+nav,footer,header,aside{display:block;}
+html,body{height:100%;width:100%;font-size:100%;line-height:1;font-size:14px;-ms-text-size-adjust:100%;-moz-text-size-adjust:100%;-webkit-text-size-adjust:100%;}
+input,button,textarea{font-family:inherit;}
+input::-ms-clear{display:none;}
+button{cursor:pointer;}
+button::-moz-focus-inner{padding:0;border:0;}
+a,a:visited{text-decoration:none;}
+a:hover{text-decoration:none;}
+ul li{list-style:none;}
+img{vertical-align:top;}
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit;}
+/*--------------------*/
+
+/* Верхняя часть шапки*/
+.header-body{
+    position: relative;
+    z-index: 5;
+}
+.header-body__top{
+    display: flex;
+    justify-content: space-between;
+}
+@media (max-width:790px) {
+    .header-body__top{
+       flex-direction: column;
+       align-items: center;
+       margin-top: 30px;        
+    }
+    .header-body__logo{
+        margin-bottom: 30px;
+    }
+}
+
+.header-body__contacts{ 
+    font-size: 18px;
+    font-family: "Gilroy Light";
+    color: rgba(20, 20, 20, 1);
+    line-height: 24px;   
+}
+.header-body__contacts br{
+    display: none;
+}
+.header-body__contacts span{
+    margin-right: 50px;
+}
+@media (max-width:665px) {
+    .header-body__contacts{
+        text-align: center;
+    }
+    .header-body__contacts button{
+        margin-top: 15px;
+    }
+}
+@media (max-width:618px) {
+    .header-body__contacts br{
+        display: initial;
+    }
+}
+@media (max-width:383px) {
+    .header-body__contacts span{
+        margin-left: 45px;
+    }
+}
+@media (max-width:352px) {
+    .header-body__contacts span{
+        margin-left: 25px;
+    }
+}
+@media (max-width:332px) {
+    .header-body__contacts span{
+        margin-left: 15px;
+    }
+}
+@media (max-width:320px) {
+    .header-body__contacts{
+        font-size: 16px;
+    }
+    .header-body__contacts span{
+        margin: 0 auto;
+    }
+    .header-body__contacts .button{
+        margin-bottom: 20px;
+    }
+}
+.header-body__contacts .button{
+    border: 2px solid;
+    border-color:  red;
+    width: 180px;
+    height: 38px;    
+    border-radius: 19px;  
+    background-color: transparent;  
+    margin-left: 25px;
+    font-size: 18px;
+    font-family: "Gilroy Light";
+    color: rgba(245, 17, 44, 1);
+    line-height: 24px;
+    text-decoration: none;  
+}  
+/* Нижняя часть шапки - МЕНЮ*/
+.header-body__bottom{
+    margin-top: 30px;
+
+}      
+.header-body__menu-list{
+    display: flex;
+    letter-spacing: 0.05em;
+}
+@media (max-width:1048px) {
+    .header-body__menu{
+       text-align: center;
+       margin-left: 60px;
+    }
+}
+.header-body__menu-list a{
+    text-decoration: none; 
+    font-size: 24px;
+    font-family: "Gilroy ExtraBold";
+    color: rgba(20, 20, 20, 1);
+    line-height: 30px;
+    text-shadow: 0px 3px 7px rgba(0, 0, 0, 0.35) ;  
+}
+.header-body__menu-list li{
+    list-style-type: none;
+    margin-right: 40px;
+}
+@media(max-width: 410px){
+    .header-body__menu-list{
+        margin-right: 30px;
+    }
+}
+/* Бургер МЕНЮ */
+@media(max-width: 767px){
+    .header-body{
+        padding-bottom: 0px;
+    }
+    .header-body__burger-menu {
+        position: relative; /* задаем относительное позиционирование */
+        width: 40px; /* определяем размеры блока */
+        height: 45px;
+        display: block;
+        margin-left: 10px;
+        top: -150px;
+    }
+    .header-body__burger-menu span, .header-body__burger-menu:after, .header-body__burger-menu:before{
+        position: absolute;
+        height: 3px;
+        width: 100%;
+        background: #ff0028;
+        margin: 0 auto;
+    }
+    .header-body__burger-menu span{
+        top: 21px;
+    }
+    .header-body__burger-menu:after, .header-body__burger-menu:before{
+        content: '';
+    }
+    .header-body__burger-menu:after{
+        bottom: 5px;
+    }
+    .header-body__burger-menu:before{
+        top: 5px;
+    }
+
+    .header-body__burger-menu.open-menu span {
+        opacity:0; 
+        transition: 0.5s; 
+    }
+    .header-body__burger-menu.open-menu:before {
+        transform: rotate(38deg);
+        top: 21px;
+        transition: 0.4s;
+    }
+    .header-body__burger-menu.open-menu:after {
+        transform: rotate(-38deg);
+        bottom: 21px;
+        transition: 0.4s;
+    }
+    .header-body__menu{
+        display: block;
+        position: absolute;
+        top: 50px;
+        left: 0px;
+        background: rgb(255, 255, 255);
+        background-image: url('img/bus3.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 50% 80%;
+        box-shadow: #ccc;
+        width: 100%;
+        height: 350%;
+        box-shadow: 0 5px 6px rgba(36, 36, 36, 0.37);
+        left: -150%;
+        transition: all 0.4s ease;
+    }
+    .header-body__menu-list {
+        display: block;
+    }
+    .header-body__menu li {
+        margin: 40px 0px 40px 33px;
+        font-size: 14px;
+    }
+    .header-body__menu li a{
+        font-size: 30px;
+    }
+    .header-body__menu.open-menu {
+        left: -60px;
+
+    }
+    .fixed-page{
+        overflow: hidden; /*запрещаем прокручивание страницы при открытом меню*/
+    }
+}
+
+@media (max-width:665px) {
+   .header-body__burger-menu{
+       top: -175px;
+   }
+}
+@media (max-width:383px) {
+    .header-body__burger-menu{
+        top: -200px;
+    }
+}
+@media (max-width:332px) {
+    .header-body__burger-menu{
+        top: -220px;
+    }
+}
+
+
+/* Промо-блок */
+
+main .container{
+    background-image: url('img/english_yes.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.promo{
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+@media(max-width: 767px) {
+    .promo{
+        margin-top: -50px;
+        flex-direction: row-reverse;
+    }
+}
+
+.promo__bus{
+    background-image: url('img/bus1.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    margin-top: -100px;
+    margin-left: -100px;
+}
+
+@media(max-width: 600px) {
+    .promo__bus{
+    display: none;
+    }
+}
+
+.promo__bus::before{
+    content: "";
+    display: block;
+    height: 80px;
+    width: 80px;
+    border: #2429ff solid 16px;
+    border-radius: 50%;
+    margin-top: 336px;
+
+}
+/* Правая часть Промо-блока */
+.promo__right{
+    background-image: url('img/wave_and_circle.png');
+    background-repeat: no-repeat;
+    background-position: 100% 50%;
+    width: 100%;
+} 
+@media(max-width: 767px) {
+    .promo__right{
+    background-image: none;
+    }
+}
+@media(max-width: 600px) {
+    .promo__right{
+    background: url('img/bus3.png');
+    background-position: center;
+    background-size: cover;
+    }
+}
+.promo__description {
+    margin-top: 200px;
+}
+.promo__description span{
+    font-size: 34px;
+    font-family: "Gilroy ExtraBold";
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.2;
+    letter-spacing: 0.05em;    
+}
+.promo__description h1{
+    position: relative;
+    font-size: 45px;
+    font-family: "Gilroy ExtraBold";
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    line-height: 1.2; 
+    letter-spacing: 0.05em; 
+    text-transform: uppercase;
+    text-shadow: 0px 3px 7px rgba(0, 0, 0, 0.35) ; 
+    margin-bottom: 60px;    
+}
+@media(max-width: 767px) {
+    .promo__description span{
+        font-size: 28px; 
+    }
+    .promo__description h1{
+        font-size: 38px;
+    }
+}
+.promo__red-stripe{
+    background-color: rgb(245, 17, 44);
+    width: 64px;
+    height: 7px;
+    margin-top: -30px;
+    margin-bottom: 30px;
+}
+.promo__description p{
+    font-size: 18px;
+    font-family: "Gilroy Light";
+    color: rgb(20, 20, 20);
+    line-height: 1.333;
+    letter-spacing: 0.05em; 
+    margin-bottom: 100px;
+}
+@media(max-width: 767px) {
+    .promo__description p{
+        font-family: "Gilroy ExtraBold";    
+    }
+}
+.promo__right__button{
+    background-image: linear-gradient( 90deg, rgb(245,17,44) 0%, rgb(255,153,121) 100%);
+    box-shadow: 0px 10px 18px 0px rgba(246, 27, 60, 0.55);
+    width: 370px;
+    height: 70px;
+    border-radius: 35px;
+    font-size: 18px;
+    font-family: "Gilroy ExtraBold";
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    line-height: 1.333;
+    letter-spacing: 0.05em;
+    border: none;
+    cursor: pointer;
+}
+@media (max-width:403px){
+    .promo__right__button{
+        width: 100%;
+    }
+}
+.promo__right__button:hover{
+    background-image: linear-gradient( 90deg, rgb(244,38,63) 0%, rgb(225,26,64) 100%);
+    background-image: linear-gradient( 90deg, rgb(244,38,63) 0%, rgb(225,26,64) 100%);
+    background-image: linear-gradient( 90deg, rgb(244,38,63) 0%, rgb(225,26,64) 100%);
+    box-shadow: 0px 10px 18px 0px rgba(246, 27, 60, 0.55);     
+}
+/* Всплывающее окно */
+.recorder{
+    background-image: url('img/dark.png');
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 6545px;
+    z-index: 131; 
+    display: none;   
+}
+.recorder__window{
+    background-color: rgb(255, 255, 255);
+    position: relative;
+    top: 200px;
+    width: calc(100% - 100px);
+    height: 540px;
+    z-index: 132;  
+}
+.recorder__krest{
+    background-image:url('img/krest.png');
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    width: 16px;
+    height: 18px;
+    z-index: 139;
+    cursor: pointer;
+}
+.recorder__header{
+    font-size: 34px;
+    color: rgb(20, 20, 20);
+    font-family: "Gilroy ExtraBold";
+    text-transform: uppercase;
+    line-height: 1.2;
+    text-align: center;
+    padding-top: 100px; 
+} 
+.recorder__leave-a-number{
+    font-size: 18px;
+    font-family: "Gilroy Light";
+    color: rgb(20, 20, 20);
+    line-height: 1.333;
+    width: 100%;
+    margin: 30px auto 0; 
+    text-align: center;
+}
+.recorder__input{
+    border-width: 1px;
+    border-color: rgb(186, 186, 186);
+    border-style: solid;
+    border-radius: 35px; 
+    max-width: 100%;
+    width: 370px;
+    height: 70px;
+    margin: 20px auto 0;
+
+}
+.recorder__telephone{
+    font-size: 18px;
+    font-family: "Gilroy Light";
+    color: rgba(20, 20, 20, 0.341);
+    line-height: 1.333;
+    letter-spacing: 0.05em;
+    text-align: center;
+    margin-top: 22px;
+}
+.recorder__button{
+    background-image: linear-gradient( 90deg, rgb(245,17,44) 0%, rgb(255,153,121) 100%);
+    box-shadow: 0px 10px 18px 0px rgba(246, 27, 60, 0.55);
+    max-width: 100%;
+    width: 370px;
+    height: 70px;
+    border-radius: 35px;
+    font-size: 18px;
+    font-family: "Gilroy ExtraBold";
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    line-height: 1.333;
+    letter-spacing: 0.05em;
+    border: none;
+    margin-top: 40px;
+    cursor: pointer;
+}
+@media (max-width:420px){
+    .recorder__telephone{
+        font-size: calc(3vw + 2px);
+    }
+    .recorder__button{
+        font-size: calc(3vw + 2px);
+    }
+    .recorder__leave-a-number{
+        font-size: calc(3vw + 2px);
+    }
+    .recorder__header{
+        font-size: calc(6vw + 2px);
+    }
+}
+.recorder__button:hover{
+    background-image: linear-gradient( 90deg, rgb(244,38,63) 0%, rgb(225,26,64) 100%);
+    background-image: linear-gradient( 90deg, rgb(244,38,63) 0%, rgb(225,26,64) 100%);
+    background-image: linear-gradient( 90deg, rgb(244,38,63) 0%, rgb(225,26,64) 100%);
+    box-shadow: 0px 10px 18px 0px rgba(246, 27, 60, 0.55);     
+}
+/* Блок с ситуациями */
+.situation__header{
+    display: flex;
+    margin-top: 80px;
+}
+.situation__header h1{
+    font-size: 45px;
+    font-family: "Gilroy ExtraBold";
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    line-height: 1.2;
+    letter-spacing: 00.05em; 
+}
+@media (max-width: 570px){
+    .situation__header h1{
+        font-size: 36px;
+    }
+}
+@media (max-width: 420px){
+    .situation__header h1{
+        font-size: 30px;
+    }
+}
+.situation__header img{
+    margin-left: -100px;
+    margin-top: -40px;
+}
+.situation__01{
+    display: flex;
+    justify-content: flex-end;
+}
+@media (max-width: 688px){
+    .situation__01{
+        flex-wrap: wrap-reverse;
+    }
+}
+.situation__01 p{
+    max-width: 100%;
+    margin-top: 90px;
+    margin-right: -100px;
+    font-size: 18px;
+    font-family: "Gilroy Light";
+    color: rgb(27, 27, 27);
+    line-height: 1.556;
+    letter-spacing: 0.05em;
+}
+@media (max-width: 688px){
+    .situation__01 p{
+        margin: 30px auto;
+
+    }   
+}
+.situation__02{
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 75px;
+}
+@media (max-width: 688px){
+    .situation__02{
+        flex-wrap: wrap;
+        padding-top: 0;
+    }
+}
+.situation__02 p{
+    width: 100%;
+    max-width: 370px;
+    margin-top: 90px;
+    margin-right: -100px;
+    font-size: 18px;
+    font-family: "Gilroy Light";
+    color: rgb(27, 27, 27);
+    line-height: 1.556;
+    letter-spacing: 0.05em;  
+}
+@media (max-width: 900px){
+    .situation__02 p{
+        max-width: 200px;
+    }
+}
+@media (max-width: 688px){
+    .situation__02 p{
+        margin: 30px 0 0;
+        max-width: 100%;
+    }
+}
+.situation__03{
+    display: flex;
+    justify-content: flex-end;
+}
+@media (max-width: 688px){
+    .situation__03{
+        flex-wrap: wrap-reverse;
+        margin-top: 210px;
+    }
+}
+.situation__03 p{
+    margin-top: 190px;
+    margin-right: 10px;
+    font-size: 18px;
+    font-family: "Gilroy Light";
+    color: rgb(27, 27, 27);
+    line-height: 1.556;
+    letter-spacing: 0.05em;  
+}
+@media (max-width: 688px){
+    .situation__03 p{
+       margin: 30px auto;
+    }
+}
+.situation__03 img{
+    margin-top: -180px;
+}
+.situation__finally{
+    display: flex;
+    justify-content: flex-start;
+}
+@media (max-width: 935px){
+    .situation__finally{
+       margin-top: 30px;
+    }
+}
+@media (max-width: 688px){
+    .situation__finally{
+       flex-wrap: wrap;
+    }
+}
+.situation__finally p{
+    margin-top: 135px;
+    margin-left: -150px;
+    font-size: 18px;
+    font-family: "Gilroy Light";
+    color: rgb(27, 27, 27);
+    line-height: 1.556;
+    letter-spacing: 0.05em;  
+}
+@media (max-width: 688px){
+    .situation__finally p{
+       margin: 30px auto;
+    }
+}
+
+
+
+/* Блок мы предусмотрели эти ситуации */
+.solving-situations{
+    margin-top: 80px;
+}
+.solving-situations-wrap{
+    display: flex;
+    margin: 0 auto;
+    align-items: flex-start; 
+}
+
+.solving-situations-wrap>img{
+    object-fit: contain;
+    max-width: 100%;    
+    margin-left: -390px;
+}
+@media (max-width:1172px) {
+    .solving-situations-wrap{
+       flex-wrap: wrap;
+       margin-top: -250px;
+    }
+    .solving-situations-wrap>img{
+       margin: 0 auto;  
+    }
+}
+.solving-situations__description h1{
+    position: relative;
+    font-size: 45px;
+    font-family: "Gilroy ExtraBold";
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    line-height: 1.2;  
+    letter-spacing: 0.05em; 
+    margin-bottom: 130px;
+    margin-top: 250px;
+}
+@media (max-width:430px) {
+    .solving-situations__description h1{
+        font-size: 32px; 
+    }
+}
+.solving-situations__description h1::after{
+    content: "";
+    display: block;
+    background-color:red;
+    width: 64px;
+    height: 7px;
+    margin-top: 35px;
+
+}
+.solving-situations__description_00{
+    display: flex;
+}
+@media (max-width:674px) {
+    .solving-situations__description_00{
+        flex-wrap: wrap;
+    }
+
+}
+.solving-situations__description_01,
+.solving-situations__description_02,
+.solving-situations__description_03{
+     margin-left: 40px;
+     padding-bottom: 20px;
+
+}
+.solving-situations__description_01 h3,
+.solving-situations__description_02 h3,
+.solving-situations__description_03 h3{
+    font-size: 18px;
+    font-family: "Gilroy ExtraBold";
+    color: rgb(20, 20, 20);
+    line-height: 1.556; 
+    letter-spacing: 0.05em; 
+}
+.solving-situations__grey-circle{
+    width: 50px;
+    height: 50px;
+    border-radius: 23px;
+    background-color: rgb(245, 245, 245);    
+    margin-top: -45px;
+    margin-left: -30px;
+}
+.solving-situations__description_01 p,
+.solving-situations__description_02 p{
+    font-size: 18px;
+    font-family: "Gilroy Light";
+    color: rgb(20, 20, 20);
+    line-height: 1.556; 
+    letter-spacing: 0.05em;
+    padding-right: 40px;        
+}
+.solving-situations__description_03 p{
+    font-size: 18px;
+    font-family: "Gilroy Light";
+    color: rgb(20, 20, 20);
+    line-height: 1.556; 
+    letter-spacing: 0.05em;
+}
+/* Блок авторов курса */
+.course-authors{
+    margin-top: 80px;
+    background-image: url('img/course_authors_bg.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position:50% 68%;
+}
+.course-authors__descriptions{
+    display: flex;
+    justify-content: space-between;
+}
+@media (max-width:1132px) {
+    .course-authors__descriptions{
+       flex-wrap: wrap;
+    }
+}
+.course-authors-wrap h1{
+    font-size: 45px;
+    font-family: "Gilroy ExtraBold";
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    line-height: 1.2; 
+    letter-spacing: 0.05em;  
+}
+@media (max-width:414px) {
+    .course-authors-wrap h1{
+       font-size: 34px;
+    }
+}
+.course-authors__descriptions_01,
+.course-authors__descriptions_02,
+.course-authors__descriptions_03{
+    width: 360px;
+    max-width: 100%;
+    height: auto;
+}
+@media (max-width:755px) {
+    .course-authors__descriptions_01,
+    .course-authors__descriptions_02,
+    .course-authors__descriptions_03{
+        width: 100%;   
+    }
+}
+.course-authors__descriptions_01 h3,
+.course-authors__descriptions_02 h3,
+.course-authors__descriptions_03 h3{
+    font-size: 18px;
+    font-family: "Gilroy ExtraBold";
+    color: rgb(20, 20, 20);
+    line-height: 1.556;
+    letter-spacing: 0.05em;  
+    padding: 0;
+}
+
+.course-authors__descriptions_01 p,
+.course-authors__descriptions_02 p,
+.course-authors__descriptions_03 p{
+    font-size: 14px;
+    font-family: "Gilroy Light";
+    color: rgb(20, 20, 20);
+    line-height: 1.714;
+    letter-spacing: 0.05em;
+}
+      
+/* Блок Что входит в стоимость */
+
+.course-composition-wrap{
+    display: flex;
+    margin-top: 80px;
+}
+@media (max-width: 820px){
+    .course-composition-wrap{
+       flex-wrap: wrap;
+       justify-content: flex-end;
+    }
+}
+.course-composition-wrap_img{
+    margin-left: -400px;
+}
+.course-composition-wrap>img{
+    width: 100%;
+
+    object-fit: cover;
+}
+.course-composition-wrap__description{
+    margin-top: 100px;
+}
+.course-composition-wrap__description h1{
+    position: relative;
+    font-size: 45px;
+    font-family: "Gilroy ExtraBold";
+    text-transform: uppercase;
+    line-height: 1.2;
+    letter-spacing: 0.05em;
+}
+@media (max-width: 677px){
+    .course-composition-wrap__description h1{
+        font-size: 36px;
+    }
+}
+
+.course-composition-wrap__red-stripe{
+    background-color: rgb(245, 17, 44);
+    width: 64px;
+    height: 7px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+.course-composition-wrap__description p span{
+    font-size: 45px;
+    font-family: "Gilroy Light";
+    color: rgb(245, 17, 44);
+    line-height: 1.2;  
+    letter-spacing: 0.05em;
+}
+@media (max-width: 500px){
+    .course-composition-wrap__description p span{
+        font-size: 36px;
+    }
+}
+.course-composition-wrap__description_right{
+    display: flex;
+}
+@media (max-width: 820px){
+    .course-composition-wrap__description_right{
+       flex-wrap: wrap;
+    }
+}
+.course-composition-wrap__description h3{
+    font-size: 18px;
+    font-family: "Gilroy ExtraBold";
+    font-weight: bold;
+    line-height: 1.556;  
+    letter-spacing: 0.05em;  
+}
+.course-composition-wrap__description p{
+    font-size: 18px;
+    font-family: "Gilroy Light";
+    line-height: 1.556;
+    letter-spacing: 0.05em;  
+    margin-bottom: 50px; 
+}
+.course-composition-wrap__description_right-left{
+    margin-right: 60px;
+}
+
+
+ /* Блок с отзывами */
+ .reviews{
+     margin-top: 80px;
+ }
+ .reviews h1{
+    position: relative;
+    font-size: 45px;
+    font-family: "Gilroy ExtraBold";
+    text-transform: uppercase;
+    line-height: 1.2;
+    letter-spacing: 0.05em;   
+ }
+ .reviews h1::after{
+    content:"";
+    position:absolute;
+    top: 100%;
+    left:0;
+    width:64px;
+    border-bottom: 7px solid red;
+}
+
+.reviwes__content{
+    display: flex;
+    margin-top: -30px;
+    align-items: flex-start;
+}
+.reviews__wrap h1{
+    margin-bottom: 100px;
+}
+.reviwes__content img{
+    object-fit: contain;
+}
+.reviwes__description{
+    margin-left: 60px;
+    margin-top: 20px;
+    width: 750px;
+}
+.reviwes__description h3{
+    font-size: 18px;
+    font-family: "Gilroy ExtraBold";
+    color: rgb(20, 20, 20);
+    line-height: 1.556;
+    letter-spacing: 0.05em;  
+    margin-bottom: 20px;
+    margin-top: -20px;
+    background-image: url('img/circle.png');
+    background-repeat: no-repeat;
+    background-position: 95% 0;
+}
+@media (max-width:335px) {
+    .reviwes__description h3{
+        background: none;
+    }
+}
+.reviwes__description p{
+    font-size: 18px;
+    font-family: "Gilroy Light";
+    color: rgb(20, 20, 20);
+    line-height: 1.556;  
+    letter-spacing: 0.05em;   
+}
+.reviwes__description button{
+    position: relative;
+    border: 2px solid;
+    border-radius: 19px;
+    border-color: rgb(245, 17, 44);
+    width: 180px;
+    height: 38px;
+    margin-top: 25px;
+    font-size: 18px;
+    font-family: "Gilroy Light";
+    color: rgb(245, 17, 44);
+    line-height: 1.333;
+    letter-spacing: 0.05em;  
+    text-decoration: none;  
+    background-color: white; 
+}
+@media (max-width:500px) {
+    .reviwes__content{
+        flex-wrap: wrap; 
+    }
+}
+.reviews__scrolling{
+    max-width: 100%;
+    background-color: rgb(233, 233, 233);
+    border-radius: 3.5px;
+    height: 7px;  
+    margin-top: 70px;
+    margin-bottom: 150px;
+}
+.reviews__line-for-scroll{
+    width: 17.54%;
+    background-color: rgb(245, 17, 44);
+    box-shadow: 0px 4px 10px 0px rgba(245, 17, 44, 0.58);     
+    height: 7px;  
+    border-radius: 3.5px;
+}
+
+/* Футер */
+.footer{
+    max-width: 100%;
+    height: 267px;
+    background-color: rgb(248, 248, 248);   
+}
+.footer-body{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 267px;
+}
+.footer-body__socseti{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 25px;
+}
+@media (max-width:413px) {
+    .footer-body__socseti{
+        justify-content: center; 
+    }
+}
+@media (max-width:413px) {
+    .footer-body{
+        flex-wrap: wrap;
+    }
+}
+.footer-body__socseti img{
+    margin-right: 20px;
+}
+.footer-body__socseti img:last-child{
+    margin-right: 0;
+}
+.footer-body__left p{
+    font-size: 18px;
+    font-family: "Gilroy Light";
+    color: rgb(20, 20, 20);
+    line-height: 1.556;  
+    letter-spacing: 0.05em;  
+}
