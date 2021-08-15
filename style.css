@@ -998,6 +998,7 @@ main .container{
 }
 .footer-body__socseti img{
     margin-right: 20px;
+    cursor: pointer;
 }
 .footer-body__socseti img:last-child{
     margin-right: 0;
