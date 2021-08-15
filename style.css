@@ -996,11 +996,11 @@ main .container{
         flex-wrap: wrap;
     }
 }
-.footer-body__socseti img{
+.footer-body__socseti a{
     margin-right: 20px;
     cursor: pointer;
 }
-.footer-body__socseti img:last-child{
+.footer-body__socseti a:last-child{
     margin-right: 0;
 }
 .footer-body__left p{
