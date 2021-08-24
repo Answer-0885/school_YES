@@ -129,10 +129,10 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit;}
 .header-body__menu-list li{
     list-style-type: none;
     margin-right: 40px;
+    border-bottom: 3px solid transparent;  
 }
 .header-body__menu-list li:hover{
-    transition: 0.5s red;
-    border-radius: 15%;
+    border-bottom: 3px solid red;
 }
 @media(max-width: 410px){
     .header-body__menu-list{
